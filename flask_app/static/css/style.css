@@ -1,0 +1,218 @@
+html {
+    background-color: rgb(29, 29, 36);
+}
+
+
+/* page 1  - Login and registration */
+
+
+#page_1 {
+    color: black;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 100px;
+
+}
+
+.register {
+    background-color: #1abc9c;
+    display: flex;
+    max-width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.login {
+    background-color: #1abc9c;
+    display: flex;
+    max-width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 30px;
+}
+
+
+
+/* page 2  - All recipes */
+
+
+#page_2 {
+    background-color: goldenrod;
+    color: goldenrod;
+}
+
+.header_page2 {
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.header_page2_left {
+    text-align: left;
+}
+
+.header_page2_right {
+    text-align: right;
+}
+
+.page_2_table_header {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+.page_2_table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(12, 12, 12, 0.15);
+}
+
+th {
+    padding: 12px 15px;
+}
+
+tr:nth-of-type(even) {
+    background-color: #7e7d7d;
+}
+
+
+
+/* page 3  - Create New Recipe*/
+
+#page_3 {
+    background-color: rgb(248, 248, 251);
+    color: black;
+}
+
+.page3_header{
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.page3_header_left {
+    text-align: left;
+}
+
+.page3_header_right {
+    text-align: right;
+}
+
+.page3_form {
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+
+
+/* page 4 */
+
+
+#page_4 {
+    background-color: rgb(248, 248, 251);
+    color: black;
+}
+
+.header_page4 {
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.header_page4_left {
+    text-align: left;
+}
+
+.header_page4_right {
+    text-align: right;
+}
+
+.page_4_table_header {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.page_4_table {
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 25px 0;
+    min-width: 50%;
+    padding: 15px 15px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* page 5 */
+
+#page_5 {
+    background-color: rgb(248, 248, 251);
+    color: black;
+}
+
+.page5_header{
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.page5_header_left {
+    text-align: left;
+}
+
+.page5_header_right {
+    text-align: right;
+}
+
+.page5_form {
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+
+.error {
+    background-color: red;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    width: 400px;
+    height: 180px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin: 0 auto;
+
+}

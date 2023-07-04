@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script> -->
+    <title>All Posted Recipes!</title>
+</head>
+<body>
+    <wrapper id="page_4">
+        <div class="header_page4">
+            <div class="header_page4_left">
+                <h1>Welcome, {{ session['user_name'] }}</h1>
+                <br>
+                <h2>{{ recipe.name }}</h2>
+            </div>
+            <div class="header_page4_right">
+                <a href="/recipes/all">Back to recipes</a>
+                <a href="/users/logout">logout</a>
+                <br>
+                <p>Posted by: {{ recipe.creator_name.first_name }}</p>
+            </div>
+        </div>
+        <div class="page_4_table">
+            <div>
+                <p class="page_4_table_header"> Description: </p>
+                <p>{{ recipe.description }}</p>
+            </div>
+            <div>
+                <p class="page_4_table_header"> Under 30 Minutes? </p>
+                <p>{{ recipe.under}}</p>
+            </div>
+            <div>
+                <p class="page_4_table_header"> Instructions: </p>
+                <p>{{ recipe.instructions }}</p>
+            </div>
+            <div>
+                <p class="page_4_table_header"> Date Made: </p>
+                <p>{{ recipe.created_at }}</p>
+            </div>
+        </div>
+    </wrapper>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

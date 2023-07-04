@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script> -->
+    <title>All Posted Recipes!</title>
+</head>
+<body>
+    <wrapper id="page_2">
+        <div class="header_page2">
+            <div class="header_page2_left">
+                <h1>Welcome, {{ session['user_name'] }}</h1>
+                <h2>All posted recipes:</h2>
+            </div>
+            <div class="header_page2_right">
+                <a href="/create/recipes/page">+ Create</a>
+                <a href="/users/logout">logout</a>
+            </div>
+        </div>
+        <div class="page_2_table">
+            <table>
+                <tr class="page_2_table_header">
+                    <th>Name</th>
+                    <th>Under 30 Minutes?</th>
+                    <th>Posted By</th>
+                    <th>Actions</th>
+                </tr><br>
+
+                {% for recipe in recipes_all %}
+                <tr>
+                    <th>{{ recipe.name }}</th>
+                    <th>{{ recipe.under }}</th>
+                    <th>{{ recipe.creator_name.first_name }}</th>
+                    <th>
+                        <a href="/recipes/{{recipe.id}}/profile">view recipe</a>
+                        <a href="/recipes/{{recipe.id}}/edit">edit</a>
+                        <a href="/recipes/{{recipe.id}}/delete">delete</a>
+                    </th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </wrapper>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

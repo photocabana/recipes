@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script> -->
+    <title>New Recipe</title>
+</head>
+<body>
+    <wrapper id="page_3">
+        <div class="page3_header">
+            <div class="page3_header_left">
+                <h1>Add a New Recipe!</h1>
+                <p>Description must not be blank</p>
+            </div>
+            <div class="page3_header_right">
+                <a href="/recipes/all">Back to recipes</a>
+                <a href="/users/logout">logout</a>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="page3_form">
+                <form action="/recipes/create" method="POST">
+                    <input type="hidden" name="user_id" value="{{ session['user_id'] }}">
+                    <label>Name:
+                    <input type="text" name="name">
+                    </label>
+                    <br>
+                    <label>Decription:
+                        <input type="text" name="description">
+                    </label>
+                    <br>
+                    <label>Instructions:
+                        <input type="text" name="instructions">
+                    </label>
+                    <br>
+                    <label>Date Cooked/Made:
+                        <input type="date" name="date_made">
+                    </label>
+                    <br>
+                    <label>Under 30 Minutes?:
+                        <label>Yes
+                            <input type="radio" name="under">
+                        </label>
+                        <label>No
+                            <input type="radio" name="under">
+                        </label>
+                    </label>
+                    <br>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </wrapper>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

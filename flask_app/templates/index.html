@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <wrapper id="page_1">
+        <div class="register">
+            <h1>Register</h1>
+            <form action="/users/create" method="POST">
+                <label>
+                    First Name:
+                    <input type="text" name="first_name">
+                </label>
+                <br>
+                <label>
+                    Last Name:
+                    <input type="text" name="last_name">
+                </label>
+                <br>
+                <label>
+                    Email:
+                    <input type="email" name="email">
+                </label>
+                <br>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <br>
+                <label>
+                    Confirm Password:
+                    <input type="password" name="confirm_password">
+                </label>
+                <br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                {% for message in messages %}
+                    <p class="error">{{ message }}</p>
+                {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="login">
+            <h2>Login</h2>
+            <form action="/users/login" method="POST">
+            <label>
+                Email:
+                <input type="email" name="email">
+            </label>
+            <br>
+            <label>
+                Password:
+                <input type="password" name="password">
+            </label>
+            <br>
+            <input type="submit" value="Login">
+            </form>
+        </div>
+    </wrapper>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
